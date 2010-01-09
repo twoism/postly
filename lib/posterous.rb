@@ -1,12 +1,28 @@
-%w{rubygems nokogiri ostruct typhoeus}.each { |f| require f }
+%w{rubygems nokogiri ostruct typhoeus active_support base64}.each { |f| require f }
+
+$:.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
 module Posterous
-  class Connection
-    include Typhoeus
+  # defunkt's singleton trick
+  extend self
+  
+  def encoded_credentials  
+    @credentials ||= Base64.encode64("#{config['username']}:#{config['password']}")
   end
-  class Post
-    attr_accessor :site_id, :title, :body, :autopost
-    attr_accessor :private, :date, :tags, :source, :sourceLink
+  
+  def config
+    @config ||= File.open(File.join(Dir.getwd, 'config/posterous.yml'), 'r') { |f| YAML.load(f) }
   end
+  
+  def base_uri
+    @base_uri ||= "http://posterous.com/api"
+  end
+  
   class PosterousError < StandardError; end
 end
+
+%w{connection post site}.each {|f| require "posterous/#{f}"}
+
+
+
+
