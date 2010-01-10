@@ -5,7 +5,7 @@ module Posterous
 
     define_remote_method  :all, 
                           :path => '/getsites', 
-                          :on_success => lambda {|response| parse_nodes response }
+                          :on_success => lambda {|response| parse_nodes response.body }
     
   end
 end

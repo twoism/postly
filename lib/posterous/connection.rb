@@ -20,7 +20,7 @@ module Posterous
     end
     
     def self.nodes_for response
-      Nokogiri::HTML(response.body).css(self.class_name.downcase)
+      Nokogiri::HTML(response).css(self.class_name.downcase)
     end
     
     def self.class_name
