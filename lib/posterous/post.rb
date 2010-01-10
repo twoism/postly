@@ -1,6 +1,5 @@
 module Posterous
   class Post
-    attr_accessor :site_id, :title, :body, :autopost
-    attr_accessor :private, :date, :tags, :source, :sourceLink
+    attr_accessor *POST_ATTRS
   end
 end
