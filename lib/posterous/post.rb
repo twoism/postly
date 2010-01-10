@@ -17,6 +17,7 @@ module Posterous
     # "source" - Optional. The name of your application or website
     # "sourceLink" - Optional. Link to your application or website
     def self.create params={}
+      params[:body] = add_download_class params[:body]
       conform post "/newpost", defaults.merge( :query => params )
     end
     
@@ -31,6 +32,14 @@ module Posterous
     def self.update post_id, params={}
       params[:post_id] = post_id
       conform post "/updatepost", defaults.merge( :query => params )
+    end
+    
+    # there is probably a better way nodes for the body
+    # but this works for now.
+    def self.add_download_class html
+      doc = Nokogiri::HTML(html)
+      doc.css( "img" ).each { |img| img["class"] = "posterous_download_image" }.to_s
+      doc.css("body").children.first.to_s
     end
     
   end
