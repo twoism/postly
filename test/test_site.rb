@@ -20,7 +20,6 @@ class Posterous::SiteTest < Test::Unit::TestCase
         </site>
       </rsp>
 XML
-      @response = Site.all
     end
     
     [:id,:name,:hostname,:url,:private,

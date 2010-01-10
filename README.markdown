@@ -1,6 +1,6 @@
 posterous
 ---------
-API wrapper for the [posterous.com](http://posterous.com/api "Posterous APIS") API.
+API wrapper for the [posterous.com](http://posterous.com/api "Posterous API") API.
 
 
 ###Install & Setup
