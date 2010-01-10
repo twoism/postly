@@ -19,8 +19,10 @@ Add `config/posterous.yml` to your project.
 
     @my_sites = Posterous::Site.all
     
-    => [#<Posterous::Site:0x1015a8d48 @num_posts="21", @commentsenabled="true", @name="twoism", @private="false", @url="http://twoism.posterous.com", @hostname="twoism", @id="85691", @primary="true">]
-[#<Posterous::Site:0x10150d3c0 @num_posts="21", @commentsenabled="true", @name="twoism", @private="false", @url="http://twoism.posterous.com", @hostname="twoism", @id="85691", @primary="true">]
+    => [#<Posterous::Site:0x1015a8d48 @num_posts="21", @commentsenabled="true",
+     @name="twoism", @private="false", @url="http://twoism.posterous.com",
+      @hostname="twoism", @id="85691", @primary="true">]
+
 
 
 
