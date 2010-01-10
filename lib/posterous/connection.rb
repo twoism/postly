@@ -23,7 +23,6 @@ module Posterous
        when Array
          result.collect { |item| self.new item }
        end
-        
     end
     
     def self.array_or_hash response
