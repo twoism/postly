@@ -1,4 +1,4 @@
-%w{rubygems nokogiri ostruct active_support httparty base64}.each { |f| require f }
+%w{rubygems nokogiri active_support httparty base64}.each { |f| require f }
 
 $:.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
