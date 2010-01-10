@@ -2,6 +2,8 @@ posterous
 ---------
 API wrapper for the [posterous.com](http://posterous.com/api "Posterous APIS") API.
 
+***
+
 ###Install & Setup
 
 posterous is hosted on [gemcutter.org](http://gemcutter.org)
@@ -12,7 +14,9 @@ Add `config/posterous.yml` to your project.
 
     username: email
     password: pass  
-
+    
+***
+    
 ###Usage
 
     require 'posterous'
@@ -23,7 +27,7 @@ Add `config/posterous.yml` to your project.
     @private="false", @url="http://twoism.posterous.com", @hostname="twoism", @id="85691", @primary="true">]
       
 
----
+***
 
 ###License
 
@@ -47,7 +51,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
----
+***
 
 ###Credits
 c. burnett ( github.com/twoism || twoism.posterous.com )
