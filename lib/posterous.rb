@@ -5,7 +5,7 @@ $:.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 module Posterous
   
   SITE_ATTRS = [:name,    :url,   :private, :primary,   :hostname,  :commentsenabled, :num_posts, :id]
-  POST_ATTRS = [:site_id, :title, :body,    :autopost,  :private,   :date,            :tags,      :source, :sourceLink]
+  POST_ATTRS = [:site_id, :title, :body,    :autopost,  :private,   :date,            :tags,      :source, :sourceLink, :id]
   
   # defunkt's singleton trick
   extend self
