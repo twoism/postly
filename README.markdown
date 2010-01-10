@@ -19,12 +19,15 @@ Add `config/posterous.yml` to your project.
 
     require 'posterous'
 
-    my_sites = Posterous::Site.all
+    my_sites = Posterous::Site.find
     => [#<Posterous::Site:0x1015a8d48 @num_posts="21", @commentsenabled="true",@name="twoism", 
     @private="false", @url="http://twoism.posterous.com", @hostname="twoism", @id="85691", @primary="true">]
       
     post = Posterous::Post.create(:site_id => my_sites.first.id, :title => "New API Post", :body => "Post body")
     => <Posterous::Post:0x102541f70 @title="New API Post">
+    
+    Posterous::Post.update(post.id, :title => "New Title", :body => "New Body")
+    => <Posterous::Post:0x102541f70 @title="New Title">
 
 ###License
 

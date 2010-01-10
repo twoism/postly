@@ -29,7 +29,8 @@ module Posterous
     # "title" - Optional. Title of post. Will update post if present.
     # "body" - Optional. Body of post. Will update post if present.
     def self.update post_id, params={}
-      conform post "/updatepost", defaults.merge( :query => params, :post_id => post_id )
+      params[:post_id] = post_id
+      conform post "/updatepost", defaults.merge( :query => params )
     end
     
   end
