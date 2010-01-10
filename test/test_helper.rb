@@ -13,3 +13,5 @@ class Test::Unit::TestCase
     end
   end
 end
+
+puts Posterous::Site.all.inspect
