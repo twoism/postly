@@ -10,8 +10,21 @@ class Test::Unit::TestCase
   end
 end
 
-@dir          = File.dirname(__FILE__) + '/fixtures'
-@wp_xml       = File.open("#{@dir}/wp.xml", 'r')
+# @dir    = File.dirname(__FILE__) + '/fixtures'
+# @wp_xml = File.open("#{@dir}/wp.xml", 'r')
+# 
+# class WordPressBlog < Posterous::Blog
+#   
+#   def self.entity_map
+#     { :entry => "item", :body => "encoded", :title => "title" }
+#   end
+#   
+#   def self.process_body item
+#     CGI.unescapeHTML(item.css("encoded").to_s).gsub(/<encoded>|<\/encoded>|\]\]>/,"")
+#   end
+# end
+# 
+# WordPressBlog.import @wp_xml.read, Posterous::Site.find.last.id
 
 # site  = Posterous::Site.find.last
 # doc   = Nokogiri::HTML @wp_xml.read
@@ -32,8 +45,8 @@ end
 # posterous_download_image
 # http://farm3.static.flickr.com/2407/2243020634_9508a65fe3.jpg
 
-
-my_sites = Posterous::Site.find
-post  = Posterous::Post.create(:site_id => my_sites.last.id, :title => "New API Post", :body => "Post body")
-puts post.inspect
+# my_sites = Posterous::Site.find
+# post  = Posterous::Post.create(:site_id => my_sites.last.id, :title => "New API Post", :body => "Post body")
+# puts post.inspect
 #puts Posterous::Post.update(post.id, :title => "New Title", :body => "New Body").inspect
+

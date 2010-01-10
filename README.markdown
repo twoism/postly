@@ -1,4 +1,4 @@
-posterous
+posterous (need to change the name. gem name is already taken.)
 ---------
 API wrapper for the [posterous.com](http://posterous.com/api "Posterous API") API.
 
@@ -28,6 +28,29 @@ Add `config/posterous.yml` to your project.
     
     Posterous::Post.update(post.id, :title => "New Title", :body => "New Body")
     => <Posterous::Post:0x102541f70 @title="New Title">
+    
+###Blog Importing
+Blogs can be imported from any XML data that can be mapped to a Post's attributes. If any element needs special treatment, just implement
+a #process_<element_name> method class method on your mapper.
+
+###The Mapper Sub-class
+    
+    class WordPressBlog < Posterous::Blog
+      
+      def self.entity_map
+        { :entry => "item", :body => "encoded", :title => "title" }
+      end
+      
+      def self.process_body item
+        CGI.unescapeHTML(item.css("encoded").to_s).gsub(/<encoded>|<\/encoded>|\]\]>/,"")
+      end
+    end
+    
+    
+    @dir    = File.dirname(__FILE__) + '/fixtures'
+    @wp_xml = File.open("#{@dir}/wp.xml", 'r')
+    
+    WordPressBlog.import @wp_xml.read, Posterous::Site.find.last.id
 
 ###License
 
