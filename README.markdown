@@ -1,4 +1,4 @@
-posterous (need to change the name. gem name is already taken.)
+posterous (gem name is already taken. will change it later.)
 ---------
 API wrapper for the [posterous.com](http://posterous.com/api "Posterous API") API.
 
