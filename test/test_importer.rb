@@ -1,5 +1,7 @@
 require "test_helper"
 
+include Posterous
+
 class WordPressBlogImporter < Posterous::BlogImporter
   
   def self.entity_map
@@ -17,8 +19,7 @@ class Posterous::BlogImporterTest < Test::Unit::TestCase
     setup do
       @dir      = File.dirname(__FILE__) + '/fixtures'
       @wp_xml   = File.open("#{@dir}/wp.xml", 'r')
-      
-      #@imported = WordPressBlogImporter.import @wp_xml.read, Posterous::Site.find.last.id
+      #@imported = WordPressBlogImporter.import(@wp_xml.read, 1)
     end
 
     should "be an array" do

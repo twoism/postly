@@ -22,8 +22,7 @@ class Posterous::PostTest < Test::Unit::TestCase
     
     context "#create" do
       setup do
-        post = Post.new
-        Post.expects(:create).with(@params).returns(post)
+        Post.stubs(:create).with(@params).returns(Post.new)
         @post = Post.create(@params)
       end
 

@@ -2,8 +2,7 @@ module Posterous
   class BlogImporter
     
     def self.import xml, site_id 
-      @doc   = Nokogiri::HTML xml     
-      
+      @doc = Nokogiri::HTML xml     
       @doc.css( entry_root ).inject([]) do | entries, item |        
         params = { :site_id => site_id }
         (POST_ATTRS - [:id]).each do | attr_name |
@@ -29,8 +28,8 @@ module Posterous
     
     def self.create_post params
       post = Posterous::Post.create(params)
-      puts "Created: #{params.inspect}"
-      params
+      puts "Created: #{post.inspect}"
+      post
     end
   end
   
