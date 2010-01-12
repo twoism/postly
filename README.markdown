@@ -29,6 +29,9 @@ Add `config/posterous.yml` to your project.
     post = Posterous::Post.create(:site_id => my_sites.first.id, :title => "New API Post", :body => "Post body")
     => <Posterous::Post:0x102541f70 @title="New API Post">
     
+    post.comments.create(:comment => "New Comment", :email => "some@one.com")
+    => <Posterous::Comment:0x102541f70 @id=123456>
+    
     Posterous::Post.update(post.id, :title => "New Title", :body => "New Body")
     => <Posterous::Post:0x102541f70 @title="New Title">
     
