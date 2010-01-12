@@ -4,12 +4,13 @@ module Posterous
   # Otherwise this would be a bit more robust.
   class ManyProxy
   
-    def initialize proxied
-      @proxied = proxied
+    def initialize proxied, klass
+      @klass    = klass
+      @proxied  = proxied
     end
     
     def create attrs={}
-      proxied.class.create( attrs.merge( foreign_key => @proxied.id ) )
+      @klass.create( attrs.merge( foreign_key => @proxied.id ) )
     end
   
     def foreign_key

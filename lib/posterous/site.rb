@@ -13,7 +13,7 @@ module Posterous
     end
     
     def posts
-      ManyProxy.new self
+      ManyProxy.new self, Post
     end
     
   end

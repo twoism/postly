@@ -43,7 +43,7 @@ module Posterous
     end
     
     def comments
-      ManyProxy.new self
+      ManyProxy.new self, Comment
     end
   end
 end

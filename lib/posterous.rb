@@ -8,6 +8,8 @@ module Posterous
   POST_ATTRS    = [:site_id, :title,    :body,    :autopost,  :private,   :date,            :tags,      :source, :sourceLink, :id]
   COMMENT_ATTRS = [:post_id, :comment,  :name,    :email,     :date]
   
+  extend self
+  
   # Base64 Encoding credentials for Basic Auth
   def encoded_credentials  
     @credentials ||= Base64.encode64("#{config['username']}:#{config['password']}")
