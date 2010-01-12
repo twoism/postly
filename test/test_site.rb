@@ -6,6 +6,8 @@ class Posterous::SiteTest < Test::Unit::TestCase
   context "Posterous::Site" do
     
     setup do
+      sites = [Site.new,Site.new]
+      Site.expects(:find).returns(sites)
       @sites = Site.find
     end
     
@@ -35,6 +37,36 @@ class Posterous::SiteTest < Test::Unit::TestCase
     should "gen the correct foreign key" do
       assert_equal( :site_id, @sites.last.posts.foreign_key )
     end
-
+    
+    context "#all" do
+      setup do
+        Site.expects(:all).returns(@sites)
+        @all = Site.all
+      end
+      should "eql #find" do
+        assert_equal(@sites.count, @all.count)
+      end
+    end
+    #     
+    context "#first" do
+      setup do
+        Site.expects(:first).returns(@sites.first)
+        @first = Site.first
+      end
+      should "eql first site" do
+        assert_equal(@sites.first.name, @first.name)
+      end
+    end
+    #     
+    context "#last" do
+      setup do
+        Site.expects(:last).returns(@sites.last)
+        @last = Site.last
+      end
+      should "eql last site" do
+        assert_equal(@sites.last.name, @last.name)
+      end
+    end
+    
   end
 end

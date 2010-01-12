@@ -20,20 +20,22 @@ class Posterous::PostTest < Test::Unit::TestCase
         end
     end
     
-    # context "#create" do
-    #       setup do
-    #         @post = Post.create(@params)
-    #       end
-    # 
-    #       should "return a post" do
-    #         assert @post.is_a? Post
-    #       end
-    #       
-    #       should "add posterous_download_image class to images" do
-    #         assert_contains Post.add_download_class(@params[:body]) , /posterous_download_image/
-    #       end
-    #       
-    #     end
+    context "#create" do
+      setup do
+        post = Post.new
+        Post.expects(:create).with(@params).returns(post)
+        @post = Post.create(@params)
+      end
+
+      should "return a post" do
+        assert @post.is_a? Post
+      end
+  
+      should "add posterous_download_image class to images" do
+        assert_contains Post.add_download_class(@params[:body]) , /posterous_download_image/
+      end
+  
+    end
     
   end
 end

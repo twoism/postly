@@ -1,4 +1,4 @@
-%w{rubygems test/unit shoulda cgi}.each { |lib| require lib }
+%w{rubygems test/unit shoulda mocha cgi}.each { |lib| require lib }
 
 require File.expand_path(File.dirname(__FILE__) + '/../lib/posterous')
 
