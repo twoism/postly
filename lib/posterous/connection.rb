@@ -10,9 +10,8 @@ module Posterous
     end
     
     def self.defaults
-      {
-        :basic_auth => {:username => Posterous.config["username"], :password => Posterous.config["password"]}
-      }
+      { :basic_auth => {:username => Posterous.config["username"], 
+        :password => Posterous.config["password"]} }
     end
     
     def self.conform response
