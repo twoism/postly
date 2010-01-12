@@ -23,6 +23,9 @@ Add `config/posterous.yml` to your project.
     => [#<Posterous::Site:0x1015a8d48 @num_posts="21", @commentsenabled="true",@name="twoism", 
     @private="false", @url="http://twoism.posterous.com", @hostname="twoism", @id="85691", @primary="true">]
       
+    my_sites.first.posts.create(:title => "New API Post", :body => "Post body")
+    => <Posterous::Post:0x102541f70 @title="New API Post">
+      
     post = Posterous::Post.create(:site_id => my_sites.first.id, :title => "New API Post", :body => "Post body")
     => <Posterous::Post:0x102541f70 @title="New API Post">
     
