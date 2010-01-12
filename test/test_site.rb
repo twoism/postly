@@ -4,6 +4,7 @@ include Posterous
 
 class Posterous::SiteTest < Test::Unit::TestCase
   context "Posterous::Site" do
+    
     setup do
       @sites = Site.find
     end
@@ -21,6 +22,18 @@ class Posterous::SiteTest < Test::Unit::TestCase
     
     should "contain sites" do
       @sites.each { |s| assert s.is_a? Site }
+    end
+    
+    should "respond to create through posts" do
+      assert @sites.last.posts.respond_to? :create
+    end
+    
+    should "be a ManyProxy" do
+      assert_equal ManyProxy, @sites.last.posts.class
+    end
+    
+    should "gen the correct foreign key" do
+      assert_equal( :site_id, @sites.last.posts.foreign_key )
     end
 
   end

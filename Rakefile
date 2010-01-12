@@ -14,7 +14,7 @@ begin
     g.authors = %w(twoism)
     g.add_dependency 'nokogiri'
     g.add_dependency 'httparty'
-    g.add_dependency 'active_support'
+    #g.add_dependency 'active_support'
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError

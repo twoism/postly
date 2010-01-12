@@ -1,5 +1,5 @@
 module Posterous
-
+  
   class Site < Connection
     
     attr_accessor *SITE_ATTRS
@@ -10,6 +10,10 @@ module Posterous
     # None
     def self.find
       conform get "/getsites", defaults
+    end
+    
+    def posts
+      ManyProxy.new self
     end
     
   end
