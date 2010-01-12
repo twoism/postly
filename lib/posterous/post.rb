@@ -42,5 +42,8 @@ module Posterous
       doc.css("body").children.first.to_s
     end
     
+    def comments
+      ManyProxy.new self
+    end
   end
 end

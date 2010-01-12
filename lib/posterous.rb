@@ -4,11 +4,9 @@ $:.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
 module Posterous
   
-  SITE_ATTRS = [:name,    :url,   :private, :primary,   :hostname,  :commentsenabled, :num_posts, :id]
-  POST_ATTRS = [:site_id, :title, :body,    :autopost,  :private,   :date,            :tags,      :source, :sourceLink, :id]
-  
-  # defunkt's singleton trick
-  extend self
+  SITE_ATTRS    = [:name,    :url,      :private, :primary,   :hostname,  :commentsenabled, :num_posts, :id]
+  POST_ATTRS    = [:site_id, :title,    :body,    :autopost,  :private,   :date,            :tags,      :source, :sourceLink, :id]
+  COMMENT_ATTRS = [:post_id, :comment,  :name,    :email,     :date]
   
   # Base64 Encoding credentials for Basic Auth
   def encoded_credentials  
