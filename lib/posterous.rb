@@ -30,7 +30,7 @@ module Posterous
   class PosterousError < StandardError; end
 end
 
-%w{connection post site blog comment}.each {|f| require "posterous/#{f}"}
+%w{connection post site blog_importer comment}.each {|f| require "posterous/#{f}"}
 
 
 

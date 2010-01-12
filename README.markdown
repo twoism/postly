@@ -33,9 +33,9 @@ Add `config/posterous.yml` to your project.
 Blogs can be imported from any XML data that can be mapped to a Post's attributes. If any element needs special treatment, just implement
 a #process_<element_name> method class method on your mapper.
 
-###The Mapper Sub-class
+###The Importer Sub-class
     
-    class WordPressBlog < Posterous::Blog
+    class WordPressBlogImporter < Posterous::BlogImporter
       
       def self.entity_map
         { :entry => "item", :body => "encoded", :title => "title" }
@@ -50,7 +50,7 @@ a #process_<element_name> method class method on your mapper.
     @dir    = File.dirname(__FILE__) + '/fixtures'
     @wp_xml = File.open("#{@dir}/wp.xml", 'r')
     
-    WordPressBlog.import @wp_xml.read, Posterous::Site.find.last.id
+    WordPressBlogImporter.import @wp_xml.read, Posterous::Site.find.last.id
 
 ###License
 
