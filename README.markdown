@@ -20,20 +20,22 @@ Add `config/posterous.yml` to your project.
     # launch the posterous console
     $ posterous
     
-    my_sites = Posterous::Site.find
+### In IRB
+
+    > my_sites = Posterous::Site.find
     => [#<Posterous::Site:0x1015a8d48 @num_posts="21", @commentsenabled="true",@name="twoism", 
     @private="false", @url="http://twoism.posterous.com", @hostname="twoism", @id="85691", @primary="true">]
       
-    my_sites.first.posts.create(:title => "New API Post", :body => "Post body")
+    > my_sites.first.posts.create(:title => "New API Post", :body => "Post body")
     => <Posterous::Post:0x102541f70 @title="New API Post">
       
-    post = Posterous::Post.create(:site_id => my_sites.first.id, :title => "New API Post", :body => "Post body")
+    > post = Posterous::Post.create(:site_id => my_sites.first.id, :title => "New API Post", :body => "Post body")
     => <Posterous::Post:0x102541f70 @title="New API Post">
     
-    post.comments.create(:comment => "New Comment", :email => "some@one.com")
+    > post.comments.create(:comment => "New Comment", :email => "some@one.com")
     => <Posterous::Comment:0x102541f70 @id=123456>
     
-    Posterous::Post.update(post.id, :title => "New Title", :body => "New Body")
+    > Posterous::Post.update(post.id, :title => "New Title", :body => "New Body")
     => <Posterous::Post:0x102541f70 @title="New Title">
     
 ###Blog Importing
