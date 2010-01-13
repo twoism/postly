@@ -91,6 +91,9 @@ f="http://chrisburnett.wordpress.com/osd.xml" title="Chrisburnett&#8217;s Blog"
         <pubDate>Sun, 10 Jan 2010 19:27:58 +0000</pubDate>
         <dc:creator><![CDATA[chrisburnett]]></dc:creator>
         <category><![CDATA[Uncategorized]]></category>
+        <category><![CDATA[Social Networking]]></category>
+
+    		<category domain="category" nicename="social-networking"><![CDATA[Social Networking]]></category>
         <category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
         <guid isPermaLink="false">http://chrisburnett.wordpress.com/?p=17</guid>
         <description/>
