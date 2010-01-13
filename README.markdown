@@ -43,13 +43,26 @@ a #process_<element_name> method class method on your mapper.
     
     class WordPressBlogImporter < Posterous::BlogImporter
       
+      # map values from the xml to the post attrs 
+      # that you would like to set.
       def self.entity_map
         { :entry => "item", :body => "encoded", :title => "title" }
       end
       
+      # any post attr can be pre-processed during import.
       def self.process_body item
         CGI.unescapeHTML(item.css("encoded").to_s).gsub(/<encoded>|<\/encoded>|\]\]>/,"")
       end
+
+      # extract tags from the node if needed
+      def self.handle_tags_for node
+        node.css("category").css("category").collect \
+        { |n| n.attributes["nicename"].text if n.attributes["nicename"].present?  }.compact!.join(",")
+      end
+      
+      # not yet implemented
+      def self.handle_comments post, node; end
+
     end
     
     
