@@ -1,3 +1,4 @@
+    
 module Posterous
   class BlogImporter
     
