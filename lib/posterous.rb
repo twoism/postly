@@ -21,6 +21,10 @@ module Posterous
     @config ||= File.open(File.join(Dir.getwd, 'config/posterous.yml'), 'r') { |f| YAML.load(f) }
   end
   
+  def config=(path)
+    @config =  File.open(path, 'r') { |f| YAML.load(f) }
+  end
+  
   #
   def base_uri
     @base_uri ||= "http://posterous.com/api"

@@ -5,13 +5,14 @@
 
 Gem::Specification.new do |s|
   s.name = %q{posterous}
-  s.version = "0.1.0"
+  s.version = "0.1.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["twoism"]
-  s.date = %q{2010-01-11}
+  s.date = %q{2010-01-14}
   s.description = %q{API Wrapper for posterous.com}
   s.email = %q{signalstatic@gmail.com}
+  s.executables = ["post", "posterous"]
   s.extra_rdoc_files = [
     "LICENSE",
      "README.markdown"
@@ -22,13 +23,16 @@ Gem::Specification.new do |s|
      "README.markdown",
      "Rakefile",
      "VERSION",
-     "config/posterous.sample.yml",
+     "bin/posterous",
      "lib/posterous.rb",
      "lib/posterous/blog_importer.rb",
      "lib/posterous/comment.rb",
      "lib/posterous/connection.rb",
+     "lib/posterous/many_proxy.rb",
      "lib/posterous/post.rb",
      "lib/posterous/site.rb",
+     "pkg/posterous-0.1.0.gem",
+     "posterous.gemspec",
      "test/fixtures/cthulhu.png",
      "test/fixtures/fennec-fox.jpg",
      "test/fixtures/wp.xml",
