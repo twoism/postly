@@ -1,7 +1,7 @@
 module Postly
   
   class Site < Connection
-    
+    many :posts
     attr_accessor *SITE_ATTRS
     
     # URL
@@ -23,10 +23,6 @@ module Postly
     
     def self.last
       find.last
-    end
-    
-    def posts
-      ManyProxy.new self, Post
     end
     
   end

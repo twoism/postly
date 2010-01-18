@@ -1,5 +1,6 @@
 module Postly
   class Post < Connection
+    many :comments
     attr_accessor *POST_ATTRS
     
     # URL
@@ -42,8 +43,5 @@ module Postly
       doc.css("body").children.first.to_s
     end
     
-    def comments
-      ManyProxy.new self, Comment
-    end
   end
 end

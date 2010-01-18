@@ -15,8 +15,6 @@ module Postly
     @credentials ||= Base64.encode64("#{config['username']}:#{config['password']}")
   end
   
-  # Currently looks in the current working directory
-  # for config/posterous.yml
   def config
     @config ||= File.open(File.join(Dir.getwd, 'config/posterous.yml'), 'r') { |f| YAML.load(f) }
   end
