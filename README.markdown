@@ -1,6 +1,6 @@
-posterous (gem name is already taken. will change it later.)
+postly (gem name is already taken. will change it later.)
 ---------
-API wrapper for the [posterous.com](http://posterous.com/api "Posterous API") API.
+API wrapper for the [posterous.com](http://posterous.com/api "Postly API") API.
 
 
 ###Install & Setup
@@ -22,21 +22,21 @@ Add `config/posterous.yml` to your project.
     
 ### In IRB
 
-    > my_sites = Posterous::Site.find
-    => [#<Posterous::Site:0x1015a8d48 @num_posts="21", @commentsenabled="true",@name="twoism", 
+    > my_sites = Postly::Site.find
+    => [#<Postly::Site:0x1015a8d48 @num_posts="21", @commentsenabled="true",@name="twoism", 
     @private="false", @url="http://twoism.posterous.com", @hostname="twoism", @id="85691", @primary="true">]
       
     > my_sites.first.posts.create(:title => "New API Post", :body => "Post body")
-    => <Posterous::Post:0x102541f70 @title="New API Post">
+    => <Postly::Post:0x102541f70 @title="New API Post">
       
-    > post = Posterous::Post.create(:site_id => my_sites.first.id, :title => "New API Post", :body => "Post body")
-    => <Posterous::Post:0x102541f70 @title="New API Post">
+    > post = Postly::Post.create(:site_id => my_sites.first.id, :title => "New API Post", :body => "Post body")
+    => <Postly::Post:0x102541f70 @title="New API Post">
     
     > post.comments.create(:comment => "New Comment", :email => "some@one.com")
-    => <Posterous::Comment:0x102541f70 @id=123456>
+    => <Postly::Comment:0x102541f70 @id=123456>
     
-    > Posterous::Post.update(post.id, :title => "New Title", :body => "New Body")
-    => <Posterous::Post:0x102541f70 @title="New Title">
+    > Postly::Post.update(post.id, :title => "New Title", :body => "New Body")
+    => <Postly::Post:0x102541f70 @title="New Title">
     
 ###Blog Importing
 Blogs can be imported from any XML data that can be mapped to a Post's attributes. If any element needs special treatment, just implement
@@ -44,7 +44,7 @@ a #process_<element_name> method class method on your mapper.
 
 ###The Importer Sub-class
     
-    class WordPressBlogImporter < Posterous::BlogImporter
+    class WordPressBlogImporter < Postly::BlogImporter
       
       # map values from the xml to the post attrs 
       # that you would like to set.
@@ -72,7 +72,7 @@ a #process_<element_name> method class method on your mapper.
     @dir    = File.dirname(__FILE__) + '/fixtures'
     @wp_xml = File.open("#{@dir}/wp.xml", 'r')
     
-    WordPressBlogImporter.import @wp_xml.read, Posterous::Site.find.last.id
+    WordPressBlogImporter.import @wp_xml.read, Postly::Site.find.last.id
 
 ###License
 

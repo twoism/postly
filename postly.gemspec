@@ -4,15 +4,15 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{posterous}
+  s.name = %q{postly}
   s.version = "0.1.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["twoism"]
-  s.date = %q{2010-01-14}
+  s.date = %q{2010-01-17}
   s.description = %q{API Wrapper for posterous.com}
   s.email = %q{signalstatic@gmail.com}
-  s.executables = ["post", "posterous"]
+  s.executables = ["post", "postly"]
   s.extra_rdoc_files = [
     "LICENSE",
      "README.markdown"
@@ -23,16 +23,10 @@ Gem::Specification.new do |s|
      "README.markdown",
      "Rakefile",
      "VERSION",
-     "bin/posterous",
-     "lib/posterous.rb",
-     "lib/posterous/blog_importer.rb",
-     "lib/posterous/comment.rb",
-     "lib/posterous/connection.rb",
-     "lib/posterous/many_proxy.rb",
-     "lib/posterous/post.rb",
-     "lib/posterous/site.rb",
+     "bin/post",
+     "config/posterous.sample.yml",
      "pkg/posterous-0.1.0.gem",
-     "posterous.gemspec",
+     "pkg/posterous-0.1.5.gem",
      "test/fixtures/cthulhu.png",
      "test/fixtures/fennec-fox.jpg",
      "test/fixtures/wp.xml",
@@ -42,7 +36,7 @@ Gem::Specification.new do |s|
      "test/test_post.rb",
      "test/test_site.rb"
   ]
-  s.homepage = %q{http://github.com/twoism/posterous}
+  s.homepage = %q{http://github.com/twoism/postly}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}

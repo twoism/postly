@@ -1,8 +1,8 @@
 require "test_helper"
 
-include Posterous
+include Postly
 
-class WordPressBlogImporter < Posterous::BlogImporter
+class WordPressBlogImporter < Postly::BlogImporter
   
   def self.entity_map
     { :entry => "item", :body => "encoded", :title => "title" }
@@ -20,12 +20,12 @@ class WordPressBlogImporter < Posterous::BlogImporter
 end
 
 
-class Posterous::BlogImporterTest < Test::Unit::TestCase
+class Postly::BlogImporterTest < Test::Unit::TestCase
   context "A Importer" do
     setup do
       @dir      = File.dirname(__FILE__) + '/fixtures'
       @wp_xml   = File.open("#{@dir}/wp.xml", 'r')
-      #@imported = WordPressBlogImporter.import(@wp_xml.read, Site.last.id)
+     # @imported = WordPressBlogImporter.import(@wp_xml.read, Site.last.id)
     end
 
     should "be an array" do

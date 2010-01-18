@@ -3,14 +3,16 @@
 $:.unshift(File.dirname(__FILE__) + '/../lib')
 
 begin
-  require 'posterous'
+  require 'postly'
   require 'irb'
 rescue LoadError
   require 'rubygems'
   retry
 end
 
-include Posterous
+Postly.config = "#{ENV['HOME']}/.postly"	
+
+include Postly
 cp = %x[pbpaste]
 post = Site.last.posts.create(:title=>"snippet", :body => "<pre>#{cp}</pre>" )
 puts "your snippet can be found at: #{post.url} or... on your clipboard."

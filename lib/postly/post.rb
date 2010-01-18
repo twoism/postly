@@ -1,4 +1,4 @@
-module Posterous
+module Postly
   class Post < Connection
     attr_accessor *POST_ATTRS
     
@@ -22,7 +22,7 @@ module Posterous
     end
     
     # URL
-    # http://posterous.com/api/updatepost
+    # http://postly.com/api/updatepost
     # Fields
     # "post_id" - Id of the post to update.
     # "media" - Optional. File data for single file. Will append to post.

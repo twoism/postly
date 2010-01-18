@@ -1,4 +1,4 @@
-module Posterous
+module Postly
   
   class Site < Connection
     

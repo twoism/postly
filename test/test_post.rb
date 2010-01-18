@@ -1,9 +1,9 @@
 require "test_helper"
 
-include Posterous
+include Postly
 
-class Posterous::PostTest < Test::Unit::TestCase
-  context "Posterous::Post" do
+class Postly::PostTest < Test::Unit::TestCase
+  context "Postly::Post" do
     
     setup do
       @params = {

@@ -1,8 +1,8 @@
-module Posterous
+module Postly
   class Comment < Connection
     attr_accessor *COMMENT_ATTRS
   # URL
-  # http://posterous.com/api/newcomment
+  # http://postly.com/api/newcomment
   # Fields
   # "post_id" - The post id to comment on
   # "comment" - The comment body

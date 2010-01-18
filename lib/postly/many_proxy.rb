@@ -1,4 +1,4 @@
-module Posterous
+module Postly
   # Quick and Dirty has_many proxy class.
   # #create is the only methods currently needed in the API.
   # Otherwise this would be a bit more robust.

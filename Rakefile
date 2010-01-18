@@ -6,15 +6,14 @@ require 'rake/rdoctask'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |g|
-    g.name = 'posterous'
+    g.name = 'postly'
     g.summary = %(API Wrapper for posterous.com)
     g.description = %(API Wrapper for posterous.com)
     g.email = 'signalstatic@gmail.com'
-    g.homepage = 'http://github.com/twoism/posterous'
+    g.homepage = 'http://github.com/twoism/postly'
     g.authors = %w(twoism)
     g.add_dependency 'nokogiri'
     g.add_dependency 'httparty'
-    #g.add_dependency 'active_support'
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError

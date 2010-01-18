@@ -1,9 +1,9 @@
 require "test_helper"
 
-include Posterous
+include Postly
 
-class Posterous::SiteTest < Test::Unit::TestCase
-  context "Posterous::Site" do
+class Postly::SiteTest < Test::Unit::TestCase
+  context "Postly::Site" do
     
     setup do
       sites = [Site.new,Site.new]

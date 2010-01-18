@@ -1,17 +1,17 @@
-module Posterous
+module Postly
   class Connection
     
     include HTTParty
     
-    base_uri Posterous.base_uri
+    base_uri Postly.base_uri
     
     def initialize attrs={}
       attrs.each_pair {|k,v| send("#{k}=".to_sym, v) if respond_to? "#{k}=".to_sym }
     end
     
     def self.defaults
-      { :basic_auth => {:username => Posterous.config["username"], 
-        :password => Posterous.config["password"]} }
+      { :basic_auth => {:username => Postly.config["username"], 
+        :password => Postly.config["password"]} }
     end
     
     def self.conform response

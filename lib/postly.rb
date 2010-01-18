@@ -2,7 +2,7 @@
 
 $:.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
-module Posterous
+module Postly
   
   SITE_ATTRS    = [:name,    :url,      :private, :primary,   :hostname,  :commentsenabled, :num_posts, :id]
   POST_ATTRS    = [:site_id, :title,    :body,    :autopost,  :private,   :date,            :tags,      :source, :sourceLink, :id, :url]
@@ -31,10 +31,10 @@ module Posterous
   end
   
   # Not sure if I need this yet
-  class PosterousError < StandardError; end
+  class PostlyError < StandardError; end
 end
 
-%w{connection many_proxy post site blog_importer comment}.each {|f| require "posterous/#{f}"}
+%w{connection many_proxy post site blog_importer comment}.each {|f| require "postly/#{f}"}
 
 
 

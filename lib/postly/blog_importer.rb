@@ -1,5 +1,5 @@
     
-module Posterous
+module Postly
   class BlogImporter
     
     def self.import xml, site_id 
@@ -29,7 +29,7 @@ module Posterous
     end
     
     def self.create_post params
-      post = Posterous::Post.create(params)
+      post = Postly::Post.create(params)
       puts "Created: #{params.inspect}"
       post
     end

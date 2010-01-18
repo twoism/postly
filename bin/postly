@@ -2,15 +2,13 @@
 
 $:.unshift(File.dirname(__FILE__) + '/../lib')
 
-begin
-  require 'posterous'
-  require 'irb'
-rescue LoadError
-  require 'rubygems'
-  retry
-end
+require 'rubygems'
+require 'postly'
+require 'irb'
 
-include Posterous
+Postly.config = "#{ENV['HOME']}/.posterous"	
+
+include Postly
 
 IRB.setup(nil)
 irb = IRB::Irb.new
