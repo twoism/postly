@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{postly}
-  s.version = "0.1.5"
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["twoism"]
-  s.date = %q{2010-01-17}
-  s.description = %q{API Wrapper for posterous.com}
+  s.date = %q{2010-01-18}
+  s.description = %q{API Wrapper and IRB console for posterous.com}
   s.email = %q{signalstatic@gmail.com}
   s.executables = ["post", "postly"]
   s.extra_rdoc_files = [
@@ -24,9 +24,18 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "bin/post",
+     "bin/postly",
      "config/posterous.sample.yml",
-     "pkg/posterous-0.1.0.gem",
-     "pkg/posterous-0.1.5.gem",
+     "etc/posterous.tmbundle/Commands/Post Selection.tmCommand",
+     "etc/posterous.tmbundle/info.plist",
+     "lib/postly.rb",
+     "lib/postly/blog_importer.rb",
+     "lib/postly/comment.rb",
+     "lib/postly/connection.rb",
+     "lib/postly/many_proxy.rb",
+     "lib/postly/post.rb",
+     "lib/postly/site.rb",
+     "postly.gemspec",
      "test/fixtures/cthulhu.png",
      "test/fixtures/fennec-fox.jpg",
      "test/fixtures/wp.xml",

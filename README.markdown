@@ -1,15 +1,15 @@
-postly (gem name is already taken. will change it later.)
+postly
 ---------
 API wrapper for the [posterous.com](http://posterous.com/api "Postly API") API.
 
 
 ###Install & Setup
 
-posterous is hosted on [gemcutter.org](http://gemcutter.org)
+postly is hosted on [gemcutter.org](http://gemcutter.org). The source is available at http://github.com/twoism/postly.
 
-    $ gem install posterous
+    $ gem install postly
 
-Add `config/posterous.yml` to your project.
+Add `config/posterous.yml` to your project or create `.posterous` in your home directory.
  
     username: email
     password: pass  
@@ -17,8 +17,8 @@ Add `config/posterous.yml` to your project.
     
 ###Usage
     
-    # launch the posterous console
-    $ posterous
+    # launch the postly console
+    $ postly
     
 ### In IRB
 
@@ -40,7 +40,7 @@ Add `config/posterous.yml` to your project.
     
 ###Blog Importing
 Blogs can be imported from any XML data that can be mapped to a Post's attributes. If any element needs special treatment, just implement
-a #process_<element_name> method class method on your mapper.
+a #process\_&lt;attr_name&gt; method class method on your sub-class.
 
 ###The Importer Sub-class
     
@@ -63,7 +63,6 @@ a #process_<element_name> method class method on your mapper.
         { |n| n.attributes["nicename"].text if n.attributes["nicename"].present?  }.compact!.join(",")
       end
       
-      # not yet implemented
       def self.handle_comments post, node; end
 
     end
@@ -98,7 +97,7 @@ THE SOFTWARE.
 
 
 ###Credits
-c. burnett ( github.com/twoism || twoism.posterous.com )
+christopher burnett ( github.com/twoism || twoism.posterous.com )
 
 
 
