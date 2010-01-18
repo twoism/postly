@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'posterous'
+
+Posterous.config = "#{ENV['HOME']}/.posterous"	
+include Posterous
+
+tags = `\"#{ENV['TM_SUPPORT_PATH']}/bin/CocoaDialog.app/Contents/MacOS/CocoaDialog\" inputbox --title 'Posting to posterous.com' --informative-text 'Add Tags (Comma seperated): ' --text '' --button1 'Get' --button2 'Cancel'`
+
+post = Site.last.posts.create( :title=&gt;"#{ENV['TM_FILENAME']}", :body =&gt; "&lt;pre&gt;#{ENV['TM_SELECTED_TEXT']}&lt;/pre&gt;", :tags =&gt; tags )
+
+puts "Your snippet can be found at: #{post.url} or on your clipboard."
+
+system "echo \"#{post.url}\" | pbcopy"
+system "open #{post.url}"</string>
+	<key>fallbackInput</key>
+	<string>document</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>^@p</string>
+	<key>name</key>
+	<string>Post Selection</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>source.ruby</string>
+	<key>uuid</key>
+	<string>D77E28AF-A285-4554-89FB-E14F1DF8F391</string>
+</dict>
+</plist>
