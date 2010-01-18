@@ -1,10 +1,7 @@
 #!/usr/bin/env ruby
+%w{rubygems postly irb}.each { |f| require f }
 
 $:.unshift(File.dirname(__FILE__) + '/../lib')
-
-require 'rubygems'
-require 'postly'
-require 'irb'
 
 Postly.config = "#{ENV['HOME']}/.posterous"	
 
