@@ -35,14 +35,14 @@ module Postly
     end
     
     
-    def self.many klass
-      define_method klass do
-        ManyProxy.new self, singularized_class_name(klass)
+    def self.many collection_name
+      define_method collection_name do
+        ManyProxy.new self, singularized_class_name(collection_name)
       end
     end
     
-    def singularized_class_name klass
-      klass.to_s.singularize.camelize.constantize
+    def singularized_class_name collection_name
+      collection_name.to_s.singularize.camelize.constantize
     end
     
   end
