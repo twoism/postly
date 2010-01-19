@@ -10,8 +10,8 @@
 require 'rubygems'
 require 'posterous'
 
-Posterous.config = "#{ENV['HOME']}/.posterous"	
-include Posterous
+Postly.config = "#{ENV['HOME']}/.posterous"	
+include Postly
 
 tags = `\"#{ENV['TM_SUPPORT_PATH']}/bin/CocoaDialog.app/Contents/MacOS/CocoaDialog\" inputbox --title 'Posting to posterous.com' --informative-text 'Add Tags (Comma seperated): ' --text '' --button1 'Get' --button2 'Cancel'`
 
