@@ -9,10 +9,16 @@ postly is hosted on [gemcutter.org](http://gemcutter.org). The source is availab
 
     $ gem install postly
 
-Add `config/posterous.yml` to your project or create `.posterous` in your home directory.
+Create the YAML file.
  
     username: email
     password: pass  
+
+And pass it into config.
+
+    Postly.config = "#{ENV['HOME']}/.posterous"
+
+The postly console looks for `.posterous` in your home directory.
     
     
 ###Usage
