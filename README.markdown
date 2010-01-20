@@ -47,7 +47,7 @@ The postly console looks for `.posterous` in your home directory.
 ### TextMate Integration
   
   
-  A TextMate bundle can be found in the `etc/` directory. After installing to TextMate press `⌥+⌘-p` to post any selection to youo posterous blog. The bundle looks for `.posterous` in your HOME directory for login info.
+  A TextMate bundle can be found in the `etc/` directory. After installing to TextMate press `⌥+⌘-p` to post any selection to your posterous blog. The bundle looks for `.posterous` in your HOME directory for login info.
     
 ###Blog Importing
 Blogs can be imported from any XML data that can be mapped to a Post's attributes. If any element needs special treatment, just implement
