@@ -5,7 +5,7 @@ API wrapper for the [posterous.com](http://posterous.com/api "Postly API") API.
 
 ###Install & Setup
 
-postly is hosted on [gemcutter.org](http://gemcutter.org). The source is available at http://github.com/twoism/postly.
+postly is hosted on [gemcutter.org](http://gemcutter.org). The source is available at [http://github.com/twoism/postly](http://github.com/twoism/postly).
 
     $ gem install postly
 
@@ -43,6 +43,11 @@ The postly console looks for `.posterous` in your home directory.
     
     > Postly::Post.update(post.id, :title => "New Title", :body => "New Body")
     => <Postly::Post:0x102541f70 @title="New Title">
+    
+### TextMate Integration
+  
+  
+  A TextMate bundle can be found in the `etc/` directory. After installing to TextMate press `⌥+⌘-p` to post any selection to youo posterous blog. The bundle looks for `.posterous` in your HOME directory for login info.
     
 ###Blog Importing
 Blogs can be imported from any XML data that can be mapped to a Post's attributes. If any element needs special treatment, just implement
