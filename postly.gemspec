@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["twoism"]
-  s.date = %q{2010-01-19}
+  s.date = %q{2010-01-22}
   s.default_executable = %q{postly}
   s.description = %q{API Wrapper and IRB console for posterous.com}
   s.email = %q{signalstatic@gmail.com}
