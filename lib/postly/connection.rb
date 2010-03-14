@@ -42,7 +42,8 @@ module Postly
     end
     
     def singularized_class_name collection_name
-      collection_name.to_s.singularize.camelize.constantize
+      "Postly::#{collection_name.to_s.singularize.camelize}".constantize
+      # collection_name.to_s.singularize.camelize.constantize
     end
     
   end

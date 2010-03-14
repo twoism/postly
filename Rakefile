@@ -7,12 +7,12 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |g|
     
-    g.name        = 'postly'
+    g.name        = 'progressions-postly'
     g.summary     = %(API Wrapper for posterous.com)
     g.description = %(API Wrapper and IRB console for posterous.com)
     g.email       = 'signalstatic@gmail.com'
-    g.homepage    = 'http://github.com/twoism/postly'
-    g.authors     = %w(twoism)
+    g.homepage    = 'http://github.com/progressions/postly'
+    g.authors     = %w(twoism progressions)
     
     g.add_dependency 'nokogiri'
     g.add_dependency 'httparty'
