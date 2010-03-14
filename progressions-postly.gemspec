@@ -36,6 +36,7 @@ Gem::Specification.new do |s|
      "lib/postly/post.rb",
      "lib/postly/site.rb",
      "postly.gemspec",
+     "progressions-postly.gemspec",
      "test/fixtures/cthulhu.png",
      "test/fixtures/fennec-fox.jpg",
      "test/fixtures/wp.xml",
