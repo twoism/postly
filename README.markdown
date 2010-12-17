@@ -1,3 +1,7 @@
+## update ##
+
+This wrapper uses the deprecated Posterous API. We are in the process of updating it to work with the current version.
+
 postly
 ---------
 API wrapper for the [posterous.com](http://posterous.com/api "Postly API") API.
